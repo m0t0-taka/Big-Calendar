@@ -1,24 +1,32 @@
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
+
 import format from "date-fns/format";
-import ja from "date-fns/locale/ja";
 import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
 import getDay from "date-fns/getDay";
+import enUS from 'date-fns/locale/en-US'
+
+// import globalize from "globalize";
+// require("./glovalize.ja.js");
+
 import "react-big-calendar/lib/css/react-big-calendar.css";
+
 import React, { useState } from "react";
+
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css"
+
 import './App.css';
 
 const locales = {
-  "ja": require("date-fns/locale/ja")
+  "en-US": enUS,
 }
 const localizer = dateFnsLocalizer({
   format,
   parse,
   startOfWeek,
   getDay,
-  locales
+  locales,
 })
 
 const events = [
